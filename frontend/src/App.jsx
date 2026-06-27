@@ -14,7 +14,7 @@ import PaymentCancel from './pages/PaymentCancel'
 import AdminPage from './pages/AdminPage'
 import { AuthProvider, useAuth } from './context/AuthContext'
 
-const API = import.meta.env.VITE_API_URL || '/api'
+const API = (import.meta.env.VITE_API_URL || '').replace(/\/api\/?$/, '').replace(/\/$/, '')
 
 function AutoLogin() {
   const [params] = useSearchParams()

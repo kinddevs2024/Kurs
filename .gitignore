@@ -3,4 +3,5 @@ node_modules/
 backend/.env
 frontend/.env
 frontend/dist/
+generated-slides/
 .DS_Store

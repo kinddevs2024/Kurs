@@ -3,7 +3,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 import { motion } from 'framer-motion'
 
-const API = import.meta.env.VITE_API_URL || '/api'
+const API = (import.meta.env.VITE_API_URL || '').replace(/\/api\/?$/, '').replace(/\/$/, '')
 
 export default function AdminPage() {
   const [receipts, setReceipts] = useState([])

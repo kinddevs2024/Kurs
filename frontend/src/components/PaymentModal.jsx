@@ -4,7 +4,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useAuth } from '../context/AuthContext'
 
-const API = import.meta.env.VITE_API_URL || '/api'
+const API = (import.meta.env.VITE_API_URL || '').replace(/\/api\/?$/, '').replace(/\/$/, '')
 
 export default function PaymentModal({ course, onClose }) {
   const { user } = useAuth()

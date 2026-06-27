@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext'
 import AuthModal from '../components/AuthModal'
 import axios from 'axios'
 
-const API = import.meta.env.VITE_API_URL || '/api'
+const API = (import.meta.env.VITE_API_URL || '').replace(/\/api\/?$/, '').replace(/\/$/, '')
 
 // ─── Animation Variants ───────────────────────────────
 const fadeUp = {
@@ -35,7 +35,7 @@ function CourseCard({ dish, index, onBuyClick }) {
   const purchased = hasPurchased(dish._id)
   
   // Try to use the first slide as thumbnail, fallback to Picsum
-  const thumbnailUrl = dish.thumbnailUrl || `${API}/slides/${dish.slug}/slide-01.png`
+  const thumbnailUrl = dish.thumbnailUrl || `${API}/api/courses/${dish._id}/slides/slide-01.png`
 
   return (
     <motion.div

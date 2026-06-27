@@ -11,7 +11,7 @@ import PaymentModal from '../components/PaymentModal'
 import AuthModal from '../components/AuthModal'
 import axios from 'axios'
 
-const API = import.meta.env.VITE_API_URL || '/api'
+const API = (import.meta.env.VITE_API_URL || '').replace(/\/api\/?$/, '').replace(/\/$/, '')
 
 export default function CoursePage() {
   const { id } = useParams()

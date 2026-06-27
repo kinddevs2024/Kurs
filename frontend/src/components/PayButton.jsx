@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext'
 import toast from 'react-hot-toast'
 import axios from 'axios'
 
-const API = import.meta.env.VITE_API_URL || '/api'
+const API = (import.meta.env.VITE_API_URL || '').replace(/\/api\/?$/, '').replace(/\/$/, '')
 const CYBERSOURCE_URL = import.meta.env.VITE_CYBERSOURCE_URL ||
   'https://testsecureacceptance.cybersource.com/pay'
 

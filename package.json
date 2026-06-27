@@ -1,0 +1,13 @@
+{
+  "name": "kurs-platform",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "install": "cd backend && npm install"
+  }
+}
